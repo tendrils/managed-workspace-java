@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc" basedir=".." default="default" name="workspace-tasks">
+    <target name="new-project">
+        <!-- TODO define script. See Help menu or http://ant.apache.org/ -->
+    </target>
+</project>
