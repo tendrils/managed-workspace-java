@@ -8,9 +8,9 @@
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
 <project name="managed-workspace" default="default" basedir=".">
-    <description>Builds, tests, and runs the project #PROJECT_NAME.</description>
-    <import file="ant/build-impl.xml"/>
-    <import file="ant/workspace-tasks.xml"/>
+    <description>Performs workspace-management and project-management tasks</description>
+    <import file="xml/core-targets.xml"/>
+    <import file="xml/workspace-tasks.xml"/>
     <!--
 
     There exist several targets which are by default empty and which can be 
