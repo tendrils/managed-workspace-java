@@ -3,6 +3,9 @@
     <type>org.netbeans.modules.ant.freeform</type>
     <configuration>
         <general-data xmlns="http://www.netbeans.org/ns/freeform-project/1">
+            <name>managed-workspace-java</name>
+        </general-data>
+        <general-data xmlns="http://www.netbeans.org/ns/freeform-project/2">
             <!-- Do not use Project Properties customizer when editing this file manually. 
  To prevent the customizer from showing, create nbproject/project.properties file and enter 
 auxiliary.show.customizer=false 
@@ -11,6 +14,25 @@ auxiliary.show.customizer.message=<message>
  will show your customized message when someone attempts to open the customizer.  -->
             <name>managed-workspace-java</name>
             <properties/>
+            <folders>
+                <source-folder>
+                    <label>managed-workspace-java</label>
+                    <location>.</location>
+                    <encoding>windows-1252</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>Java Sources</label>
+                    <type>java</type>
+                    <location>src</location>
+                    <encoding>windows-1252</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>XML Sources</label>
+                    <type>java</type>
+                    <location>xml</location>
+                    <encoding>windows-1252</encoding>
+                </source-folder>
+            </folders>
             <ide-actions>
                 <action name="build">
                     <target>jar</target>
@@ -34,6 +56,14 @@ auxiliary.show.customizer.message=<message>
             </ide-actions>
             <view>
                 <items>
+                    <source-folder style="packages">
+                        <label>Java Sources</label>
+                        <location>src</location>
+                    </source-folder>
+                    <source-folder style="tree">
+                        <label>XML Sources</label>
+                        <location>xml</location>
+                    </source-folder>
                     <source-file>
                         <location>build.xml</location>
                     </source-file>
@@ -47,7 +77,17 @@ auxiliary.show.customizer.message=<message>
                     <ide-action name="test"/>
                 </context-menu>
             </view>
+            <subprojects/>
         </general-data>
-        <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/1"/>
+        <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/1">
+            <compilation-unit>
+                <package-root>src</package-root>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>xml</package-root>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+        </java-data>
     </configuration>
 </project>

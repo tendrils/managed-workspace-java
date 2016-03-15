@@ -61,4 +61,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# project-specific exclusions
 /nbproject/private/
+pkg/*
+index/*/current/
+index/*/version/
+lib/*
