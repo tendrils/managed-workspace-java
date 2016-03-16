@@ -32,6 +32,18 @@ auxiliary.show.customizer.message=<message>
                     <location>xml</location>
                     <encoding>windows-1252</encoding>
                 </source-folder>
+                <source-folder>
+                    <label>template</label>
+                    <type>java</type>
+                    <location>template</location>
+                    <encoding>windows-1252</encoding>
+                </source-folder>
+                <source-folder>
+                    <label>config</label>
+                    <type>java</type>
+                    <location>config</location>
+                    <encoding>windows-1252</encoding>
+                </source-folder>
             </folders>
             <ide-actions>
                 <action name="build">
@@ -56,13 +68,21 @@ auxiliary.show.customizer.message=<message>
             </ide-actions>
             <view>
                 <items>
+                    <source-folder style="tree">
+                        <label>XML Sources</label>
+                        <location>xml</location>
+                    </source-folder>
                     <source-folder style="packages">
                         <label>Java Sources</label>
                         <location>src</location>
                     </source-folder>
                     <source-folder style="tree">
-                        <label>XML Sources</label>
-                        <location>xml</location>
+                        <label>template</label>
+                        <location>template</location>
+                    </source-folder>
+                    <source-folder style="tree">
+                        <label>config</label>
+                        <location>config</location>
                     </source-folder>
                     <source-file>
                         <location>build.xml</location>
@@ -86,6 +106,14 @@ auxiliary.show.customizer.message=<message>
             </compilation-unit>
             <compilation-unit>
                 <package-root>xml</package-root>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>template</package-root>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>config</package-root>
                 <source-level>1.5</source-level>
             </compilation-unit>
         </java-data>
