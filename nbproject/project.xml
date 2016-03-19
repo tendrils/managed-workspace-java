@@ -13,7 +13,7 @@ property there. Adding
 auxiliary.show.customizer.message=<message>
  will show your customized message when someone attempts to open the customizer.  -->
             <name>managed-workspace-java</name>
-            <properties/>
+            <properties file="workspace.properties" />
             <folders>
                 <source-folder>
                     <label>managed-workspace-java</label>
@@ -69,6 +69,11 @@ auxiliary.show.customizer.message=<message>
             <view>
                 <items>
                     <source-folder style="tree">
+                        <label>contents</label>
+                        <location>.</location>
+                    </source-folder>
+                    <!--
+                    <source-folder style="tree">
                         <label>XML Sources</label>
                         <location>xml</location>
                     </source-folder>
@@ -86,7 +91,7 @@ auxiliary.show.customizer.message=<message>
                     </source-folder>
                     <source-file>
                         <location>build.xml</location>
-                    </source-file>
+                    </source-file>-->
                 </items>
                 <context-menu>
                     <ide-action name="build"/>
@@ -97,24 +102,18 @@ auxiliary.show.customizer.message=<message>
                     <ide-action name="test"/>
                 </context-menu>
             </view>
-            <subprojects/>
+            <subprojects>
+                <project>pkg/workspace-ant-tasks</project>
+            </subprojects>
         </general-data>
         <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/1">
             <compilation-unit>
                 <package-root>src</package-root>
-                <source-level>1.5</source-level>
+                <source-level>1.8</source-level>
             </compilation-unit>
             <compilation-unit>
-                <package-root>xml</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
-                <package-root>template</package-root>
-                <source-level>1.5</source-level>
-            </compilation-unit>
-            <compilation-unit>
-                <package-root>config</package-root>
-                <source-level>1.5</source-level>
+                <package-root>test</package-root>
+                <source-level>1.8</source-level>
             </compilation-unit>
         </java-data>
     </configuration>

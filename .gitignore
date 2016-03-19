@@ -68,3 +68,4 @@ pkg/*
 index/*/current/
 index/*/version/
 lib/*
+/project/workspace-ant-tasks/nbproject/private/
