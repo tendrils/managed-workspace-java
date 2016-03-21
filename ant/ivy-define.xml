@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1"
+         xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3"
+         xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc"
+         basedir=".." default="default" name="ivy-define">
+    <!--
+        ant/ivy-define.xml
+        *******************
+        defines ant targets to load and invoke the ivy dependency
+        management layer.
+        
+        for best results attach -ivy-retrieve to a precompile lifecycle target        
+        
+    -->
+    <!--
+        -ivy-define
+        -> -check-for-ivy
+        check if ivy is already on the classpath, if not then load it now
+    -->
+    <target name="-check-for-ivy">
+        <available property="have.ivy" resource="fr/jayasoft/ivy/ant/antlib.xml"/>
+    </target>
+    <!-- ****************** -->
+    <target name="-ivy-define" depends="-check-for-ivy" unless="have.ivy">
+        <taskdef resource="fr/jayasoft/ivy/ant/antlib.xml" uri="antlib:fr.jayasoft.ivy.ant">
+            <classpath>
+                <fileset dir="${ivy.home}">
+                    <include name="ivy*.jar"/>
+                    <include name="lib/*.jar"/>
+                </fileset>
+            </classpath>
+        </taskdef>
+    </target>
+    <!-- ****************** -->
+    <!--
+        -ivy-retrieve
+        [-> -ivy-define]
+        - resolve deps from ivy.xml
+        - retrieve deps from repository
+        - compute classpath for ivy deps in java compiler format
+        - save classpath to javac.properties
+    -->
+    <target name="-ivy-retrieve" depends="-ivy-define" xmlns:ivy="antlib:fr.jayasoft.ivy.ant">
+        <ivy:resolve/> <!-- Tell Ivy to resolve dependencies -->
+        <ivy:retrieve/> <!-- Load dependencies to the project -->
+        <pathconvert property="ivy.classpath.computed" dirsep="/" pathsep=":">
+            <path>
+                <fileset dir="lib" includes="*.jar"/>
+            </path>
+            <map from="${basedir}${file.separator}" to=""/>
+        </pathconvert>
+        <propertyfile file="config/javac.properties">
+            <entry operation="=" key="ivy.classpath" value="${ivy.classpath.computed}"/>
+        </propertyfile>
+    </target>
+    
+    
+</project>

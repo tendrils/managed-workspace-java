@@ -13,7 +13,7 @@ property there. Adding
 auxiliary.show.customizer.message=<message>
  will show your customized message when someone attempts to open the customizer.  -->
             <name>managed-workspace-java</name>
-            <properties file="workspace.properties" />
+            <properties/>
             <folders>
                 <source-folder>
                     <label>managed-workspace-java</label>
@@ -21,27 +21,9 @@ auxiliary.show.customizer.message=<message>
                     <encoding>windows-1252</encoding>
                 </source-folder>
                 <source-folder>
-                    <label>Java Sources</label>
-                    <type>java</type>
-                    <location>src</location>
-                    <encoding>windows-1252</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>XML Sources</label>
-                    <type>java</type>
-                    <location>xml</location>
-                    <encoding>windows-1252</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>template</label>
-                    <type>java</type>
-                    <location>template</location>
-                    <encoding>windows-1252</encoding>
-                </source-folder>
-                <source-folder>
-                    <label>config</label>
-                    <type>java</type>
-                    <location>config</location>
+                    <label>ant</label>
+                    <type>resources</type>
+                    <location>ant</location>
                     <encoding>windows-1252</encoding>
                 </source-folder>
             </folders>
@@ -69,17 +51,8 @@ auxiliary.show.customizer.message=<message>
             <view>
                 <items>
                     <source-folder style="tree">
-                        <label>contents</label>
-                        <location>.</location>
-                    </source-folder>
-                    <!--
-                    <source-folder style="tree">
                         <label>XML Sources</label>
                         <location>xml</location>
-                    </source-folder>
-                    <source-folder style="packages">
-                        <label>Java Sources</label>
-                        <location>src</location>
                     </source-folder>
                     <source-folder style="tree">
                         <label>template</label>
@@ -89,9 +62,23 @@ auxiliary.show.customizer.message=<message>
                         <label>config</label>
                         <location>config</location>
                     </source-folder>
+                    <source-folder style="tree">
+                        <label>project</label>
+                        <location>project</location>
+                    </source-folder>
+                    <source-folder style="tree">
+                        <label>ant</label>
+                        <location>ant</location>
+                    </source-folder>
                     <source-file>
                         <location>build.xml</location>
-                    </source-file>-->
+                    </source-file>
+                    <source-file>
+                        <location>ivy.xml</location>
+                    </source-file>
+                    <source-file>
+                        <location>workspace.properties</location>
+                    </source-file>
                 </items>
                 <context-menu>
                     <ide-action name="build"/>
@@ -103,18 +90,10 @@ auxiliary.show.customizer.message=<message>
                 </context-menu>
             </view>
             <subprojects>
-                <project>pkg/workspace-ant-tasks</project>
+                <project>project/*</project>
             </subprojects>
         </general-data>
         <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/1">
-            <compilation-unit>
-                <package-root>src</package-root>
-                <source-level>1.8</source-level>
-            </compilation-unit>
-            <compilation-unit>
-                <package-root>test</package-root>
-                <source-level>1.8</source-level>
-            </compilation-unit>
         </java-data>
     </configuration>
 </project>

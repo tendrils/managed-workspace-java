@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1"
+         xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3"
+         xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc"
+         basedir=".." default="default" name="jdk-debug">
+    <!--
+        ant/javac-define.xml
+        *******************
+        defines ant targets related to the compiling of java source code.
+        the java compiler accepts a wide range of parameters in order to
+        locate source and dependency paths, and these are computed and
+        defined here.
+    -->
+    <!--
+        begin configuration targets
+    -->
+    <target name="-jdk-debug-init" depends="-jdk-define">
+    </target>
+    <target name="javac-init" depends="workspace-init,javac-configure"
+            description="load java compiler properties for this environment"/>
+    
+    
+    
+    <!-- ****************** -->
+    <!-- 
+        begin package targets
+    -->
+</project>

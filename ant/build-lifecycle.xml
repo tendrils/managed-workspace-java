@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1"
+         xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3"
+         xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc"
+         basedir=".." default="default" name="build-lifecycle">
+    
+    <!--
+      - initialization
+      - compilation
+      - jar
+      - execution
+      - debugging
+      - javadoc
+      - test compilation
+      - test execution
+      - test debugging
+      - applet
+      - cleanup
+    -->
+    
+    <target name="-pre-init"/>
+    <target name="-post-init" depends="-pre-init"/>
+    
+    <target name="-pre-compile" depends="-post-init"/>
+    <target name="-post-compile" depends="-pre-compile"/>
+</project>

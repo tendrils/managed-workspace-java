@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1"
+         xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3"
+         xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc"
+         basedir=".." default="default" name="workspace">
+    <!--
+        ant/ivy-define.xml
+        *******************
+        defines ant targets to load the ivy dependency management system
+        and initialise it from a local ivy.xml project model. 
+        
+        
+        
+        
+        
+    -->
+    <!--
+        begin configuration targets
+    -->
+    <target name="-workspace-pre-init">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
+    </target>
+    <target depends="-workspace-pre-init" name="-workspace-init-local">
+        <property file="local/workspace.local.properties"/>
+        <property file="local/${ws.mode}/workspace.local.${ws.mode}.properties"/>
+        <property name="default.javac.source" value="1.4"/>
+        <property name="default.javac.target" value="1.4"/>
+    </target>
+    <target depends="-workspace-pre-init,-workspace-init-local" name="workspace-init">
+        <property file="config/${ws.mode}/workspace.${ws.mode}.properties"/>
+        <property file="config/workspace.properties"/>
+    </target>
+    <target name="workspace-configure">
+        <propertyfile file="workspace.properties"/>
+    </target>
+    
+    <!-- 
+        end configuration targets
+    -->
+    <!-- ****************** -->
+    <!--
+        begin workspace targets
+    -->
+    <target name="update" depends="workspace-init" description="load environment">
+        
+    </target>
+    <!-- 
+        end workspace targets
+    -->
+    <!-- ****************** -->
+    <!-- 
+        begin project targets
+    -->
+    <target name="new-project" depends="workspace-init">
+        
+    </target>
+
+
+    <!--
+        end project targets
+    -->
+    <!-- ****************** -->
+    <!-- 
+        begin package targets
+    -->
+    <target name="pkg-info" depends="workspace-init">
+    
+    </target>
+    <target name="pkg-get" depends="workspace-init,have-repo">
+        
+    </target>
+    <!-- 
+        end package targets
+    -->
+</project>
